@@ -1,0 +1,16 @@
+tezos-client --endpoint https://mainnet-tezos.giganode.io/ hash data "$(cat florencenet/210723_threshold_change.tz)" of type "$(cat misc/multisig_signed_type.tz)"
+Disclaimer:
+  The  Tezos  network  is  a  new  blockchain technology.
+  Users are  solely responsible  for any risks associated
+  with usage of the Tezos network.  Users should do their
+  own  research to determine  if Tezos is the appropriate
+  platform for their needs and should apply judgement and
+  care in their network interactions.
+
+Raw packed data: 0x05070707070a00000004ed9d217c0a000000160198aa60898a36934fe71b15a640c696f69ff60e080007070003050807070004020000010a0a0000002100bee748b9e088f8d15f02493647e5b032144fe51fdcd0d983323880a2c558b4700a00000021006d9347243f45b92139e8ac9e24e5523ffd22e8a5c21e66bf2140eb67e3d48cc40a00000021004b53ea10d71fc32247a548b64d281e9258cb33043fe55392d797fb5555588d1f0a0000002100502c0b41f32f0cc5b362e6f1ceacc432421bf992f8bc677eb7a3be4743efc0f50a0000002100a0e3d878a45dc09f4c05aca3b7dbd21574bfed8f19370bd194538fba7b05efd50a0000002100abfb2e0b1a153722e6ae52f75edbc5bcc89e1246d6887c288107fd105f006e990a0000002100856fb0209ea183e04b53721caf278327b1eb87dca0c47e8a9b8a4250c1bc9384
+Script-expression-ID-Hash: exprv4D7uwd3PqGUZPZnLtMdEFL3YpGVGzjTuUffjKxu18XxiDkYZg
+Raw Script-expression-ID-Hash: 0xcad67d98f74bfbad819805548448cc564ab0ceb18ed2c4e16fb58e8541a53cf5
+Ledger Blake2b hash: Eeo3zNA2W3Hg2ZEWyCUWT4VqV7x9vY6ob2NL4wLqf9mE
+Raw Sha256 hash: 0x6784f9e681ec5e407230ca5dd18bba6f233622ba34db718a0d4261c7ef32a96e
+Raw Sha512 hash: 0xe676fcb4861444d397b242234b6025ecd22c2ebf0181606445a0acad32358d01c856fef70cb069a737398fd25d9d6f13c3e9efa68341aaa95c8297747136a054
+Gas remaining: 1039546.160 units remaining

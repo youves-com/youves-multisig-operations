@@ -1,0 +1,73 @@
+# Youves Multisig History
+
+## Usage
+
+If you are a Youves multisig member you can sign the provided operation using the following commands:
+
+### Getting the payload
+
+Using native tezos-client (replace the endpoint ... with a node i.e. https://mainnet-tezos.giganode.io/):
+
+```
+tezos-client --endpoint ... hash data "$(cat YYMMDD_operation.tz)" of type "$(cat ../misc/multisig_signed_type.tz)"
+```
+
+Using docker tezos-client (replace the endpoint ... with a node i.e. https://mainnet-tezos.giganode.io/):
+
+```
+docker run -ti --rm tezos/tezos:arm64-9.4.0 tezos-client --endpoint ... hash data "$(cat YYMMDD_operation.tz)" of type "$(cat ../misc/multisig_signed_type.tz)"
+```
+
+This will produce an output like:
+
+```
+Raw packed data: 0x05070707070a00000004ed9d217c0a000000160198aa60898a36934fe71b15a640c696f69ff60e080007070002050807070003020000010a0a0000002100bee748b9e088f8d15f02493647e5b032144fe51fdcd0d983323880a2c558b4700a00000021006d9347243f45b92139e8ac9e24e5523ffd22e8a5c21e66bf2140eb67e3d48cc40a00000021004b53ea10d71fc32247a548b64d281e9258cb33043fe55392d797fb5555588d1f0a0000002100502c0b41f32f0cc5b362e6f1ceacc432421bf992f8bc677eb7a3be4743efc0f50a0000002100a0e3d878a45dc09f4c05aca3b7dbd21574bfed8f19370bd194538fba7b05efd50a0000002100abfb2e0b1a153722e6ae52f75edbc5bcc89e1246d6887c288107fd105f006e990a0000002100856fb0209ea183e04b53721caf278327b1eb87dca0c47e8a9b8a4250c1bc9384
+Script-expression-ID-Hash: expruywbJP7as9t7t113NBU25UK914XcKeUpcg2NDirRzGi56tVonU
+Raw Script-expression-ID-Hash: 0xc125c0b27e9c9ca99b5327055a7817de5041d5d67008cebda7fe65ebfaec5f0c
+Ledger Blake2b hash: Dzy5KB6v6J63yXaVrLyhg2ctb1ghnAYvJaf3uyzaqD1m
+Raw Sha256 hash: 0x09c60d9db2426dd23eeb0ee635e4df397fe1f39bf9adbeef0104d40b76e433c6
+Raw Sha512 hash: 0x4bbb5d7546b9c0c1ca8d12fc5a594f9f2eb62a94637609101836a89e529fe7eb37871398fa35f25b70b9dd97d8750fd7d0542913e46a915c19eb2c3ce1251bc6
+Gas remaining: 1039546.160 units remaining
+```
+
+In the above example the "payload" that needs to be signed is:
+
+```
+0x05070707070a00000004ed9d217c0a000000160198aa60898a36934fe71b15a640c696f69ff60e080007070002050807070003020000010a0a0000002100bee748b9e088f8d15f02493647e5b032144fe51fdcd0d983323880a2c558b4700a00000021006d9347243f45b92139e8ac9e24e5523ffd22e8a5c21e66bf2140eb67e3d48cc40a00000021004b53ea10d71fc32247a548b64d281e9258cb33043fe55392d797fb5555588d1f0a0000002100502c0b41f32f0cc5b362e6f1ceacc432421bf992f8bc677eb7a3be4743efc0f50a0000002100a0e3d878a45dc09f4c05aca3b7dbd21574bfed8f19370bd194538fba7b05efd50a0000002100abfb2e0b1a153722e6ae52f75edbc5bcc89e1246d6887c288107fd105f006e990a0000002100856fb0209ea183e04b53721caf278327b1eb87dca0c47e8a9b8a4250c1bc9384
+```
+
+You can check if you are getting the right payload by checking the "log" folder in the project 
+
+### Signing the payload
+
+#### Using Beacon
+
+You can also use beacon and a compatible beacon wallet (i.e. AirGap) to sign the payload. For that copy the payload to your clipboard and then open this site, the playground expect no `0x` prefix, so you can simply paste starting with `0507...`:
+
+[Beacon Playground Snippet](https://docs.walletbeacon.io/playground?code=aW1wb3J0IHsgVGV6b3NUb29sa2l0IH0gZnJvbSAiQHRhcXVpdG8vdGFxdWl0byI7CmltcG9ydCB7IEJlYWNvbldhbGxldCB9IGZyb20gIkB0YXF1aXRvL2JlYWNvbi13YWxsZXQiOwppbXBvcnQgeyBTaWduaW5nVHlwZSB9IGZyb20gIkBhaXJnYXAvYmVhY29uLXNkayI7Cgpjb25zdCBUZXpvcyA9IG5ldyBUZXpvc1Rvb2xraXQoImh0dHBzOi8vbWFpbm5ldC10ZXpvcy5naWdhbm9kZS5pbyIpOwpjb25zdCB3YWxsZXQgPSBuZXcgQmVhY29uV2FsbGV0KHsgbmFtZTogIkJlYWNvbiBEb2NzIFRhcXVpdG8iIH0pOwoKVGV6b3Muc2V0V2FsbGV0UHJvdmlkZXIod2FsbGV0KTsKY29uc3QgcGVybWlzc2lvbnMgPSBhd2FpdCB3YWxsZXQuY2xpZW50LnJlcXVlc3RQZXJtaXNzaW9ucygpOwoKY29uc29sZS5sb2coJ05ldyBjb25uZWN0aW9uOicsIHBlcm1pc3Npb25zLmFkZHJlc3MpOwoKY29uc3QgcmVzcG9uc2UgPSBhd2FpdCB3YWxsZXQuY2xpZW50LnJlcXVlc3RTaWduUGF5bG9hZCh7CiAgc2lnbmluZ1R5cGU6IFNpZ25pbmdUeXBlLk1JQ0hFTElORSwKICBwYXlsb2FkOiAgICAiMDUwNzA3MDcwNzBhMDAwMDAwMDRlZDlkMjE3YzBhMDAwMDAwMTYwMTk4YWE2MDg5OGEzNjkzNGZlNzFiMTVhNjQwYzY5NmY2OWZmNjBlMDgwMDA3MDcwMDAyMDUwODA3MDcwMDAzMDIwMDAwMDEwYTBhMDAwMDAwMjEwMGJlZTc0OGI5ZTA4OGY4ZDE1ZjAyNDkzNjQ3ZTViMDMyMTQ0ZmU1MWZkY2QwZDk4MzMyMzg4MGEyYzU1OGI0NzAwYTAwMDAwMDIxMDA2ZDkzNDcyNDNmNDViOTIxMzllOGFjOWUyNGU1NTIzZmZkMjJlOGE1YzIxZTY2YmYyMTQwZWI2N2UzZDQ4Y2M0MGEwMDAwMDAyMTAwNGI1M2VhMTBkNzFmYzMyMjQ3YTU0OGI2NGQyODFlOTI1OGNiMzMwNDNmZTU1MzkyZDc5N2ZiNTU1NTU4OGQxZjBhMDAwMDAwMjEwMDUwMmMwYjQxZjMyZjBjYzViMzYyZTZmMWNlYWNjNDMyNDIxYmY5OTJmOGJjNjc3ZWI3YTNiZTQ3NDNlZmMwZjUwYTAwMDAwMDIxMDBhMGUzZDg3OGE0NWRjMDlmNGMwNWFjYTNiN2RiZDIxNTc0YmZlZDhmMTkzNzBiZDE5NDUzOGZiYTdiMDVlZmQ1MGEwMDAwMDAyMTAwYWJmYjJlMGIxYTE1MzcyMmU2YWU1MmY3NWVkYmM1YmNjODllMTI0NmQ2ODg3YzI4ODEwN2ZkMTA1ZjAwNmU5OTBhMDAwMDAwMjEwMDg1NmZiMDIwOWVhMTgzZTA0YjUzNzIxY2FmMjc4MzI3YjFlYjg3ZGNhMGM0N2U4YTliOGE0MjUwYzFiYzkzODQiLAp9KTsKCmNvbnNvbGUubG9nKGBTaWduYXR1cmU6ICR7cmVzcG9uc2Uuc2lnbmF0dXJlfWApOwoK)
+
+
+
+#### Using the tezos-client
+
+You can use the tezos-client for signing those bytes using the following command (make sure to paste the entire payload where it says 0x0507... and you use the right account alias):
+
+```
+tezos-client sign bytes 0x0507... for my_multisig_account
+```
+
+This will produce an output like:
+
+```
+Disclaimer:
+  The  Tezos  network  is  a  new  blockchain technology.
+  Users are  solely responsible  for any risks associated
+  with usage of the Tezos network.  Users should do their
+  own  research to determine  if Tezos is the appropriate
+  platform for their needs and should apply judgement and
+  care in their network interactions.
+
+Signature: edsigtrA7iYbGkAWDK4PpH23yVcrVyHS4FsCtgztQ8Unzm7phpvd2UZecnyPVNTnF65dK9H81u5mn6JjQCzw9if9rr1wtWKCSx4
+```
+
+The relevant signature you are required to share is `edsigtrA7iYbGkAWDK4PpH23yVcrVyHS4FsCtgztQ8Unzm7phpvd2UZecnyPVNTnF65dK9H81u5mn6JjQCzw9if9rr1wtWKCSx4`
