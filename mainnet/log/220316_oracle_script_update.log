@@ -1,0 +1,15 @@
+Disclaimer:
+  The  Tezos  network  is  a  new  blockchain technology.
+  Users are  solely responsible  for any risks associated
+  with usage of the Tezos network.  Users should do their
+  own  research to determine  if Tezos is the appropriate
+  platform for their needs and should apply judgement and
+  care in their network interactions.
+
+Raw packed data: 0x05070707070a000000047a06a7700a0000001601aaa102da175b6f714731460ca53a588aa2f7d609000707000c0505020000009b0320053d036d0743036e0a00000016019f8566bf87dcb9c81a865b82ec545789cc18378e000655036900000011257365745f76616c69645f736372697074072f02000000090743035b008705032702000000000743036a0000074303690a00000035697066733a2f2f516d54777a465978366f7268416e4c3657566f566e35743374727355387577613756314d4d4e53524b396b48426a034d031b
+Script-expression-ID-Hash: exprtrAuUhewnVwWK8Kz4bFL3ypAhNgj2R33pxS4CHFuXeWtvF86An
+Raw Script-expression-ID-Hash: 0x2bcebedd6c6eb6f5b8113a3a642939ca42e8b5298faec0b158d96044d46f0932
+Ledger Blake2b hash: 3x1Nv2GVcWCTuVb7JsPTY1tMy8H8QL8M92oGdvTcfw9j
+Raw Sha256 hash: 0x380fa78ae97ffb3754a63be19d42d1ed567dccca0622ac6978568d2b2608b26a
+Raw Sha512 hash: 0x31d9542d1e36d88c6168a3d213c4e9eb4f8694da19248180b90e95462b8943ec43864ea34ffa2930792a6e58526775e80bd3dd2ed0ddd2be4097d3a330bc696b
+Gas remaining: 1039792.470 units remaining
