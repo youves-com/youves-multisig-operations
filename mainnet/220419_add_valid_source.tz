@@ -1,0 +1,1 @@
+(Pair (Pair 0x7a06a770 "KT1Q8yKdJaU5VcBL8JcxUT9PU99m53ubERk4") (Pair 22 (Left { DROP; NIL operation; PUSH address "KT1P8Ep9y8EsDSD9YkvakWnDvF2orDcpYXSq"; CONTRACT %add_valid_source address; IF_NONE { PUSH int 145; FAILWITH } {}; PUSH mutez 0; PUSH address "tz3a7rwcnRBRdQ2Zk8FEDfSnpSnUp6yfZB7F"; TRANSFER_TOKENS; CONS })))
