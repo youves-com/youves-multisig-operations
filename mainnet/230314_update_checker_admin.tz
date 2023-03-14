@@ -1,0 +1,1 @@
+(Pair (Pair 0x7a06a770 "KT1Q8yKdJaU5VcBL8JcxUT9PU99m53ubERk4") (Pair 68 (Left { DROP; NIL operation; PUSH address "KT1Sm4gYTvQ6PRN49vhH3ZHXGc46ZQJWSKJY"; CONTRACT %set_admin address; IF_NONE { PUSH int 1816; FAILWITH } {}; PUSH mutez 0; PUSH address "tz1YY1LvD6TFH4z74pvxPQXBjAKHE5tB5Q8f"; TRANSFER_TOKENS; CONS })))
