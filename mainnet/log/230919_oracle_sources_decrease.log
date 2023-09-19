@@ -1,0 +1,20 @@
+Warning:
+  The executable with name tezos-client has been renamed to octez-client. The name tezos-client is now
+  deprecated, and it will be removed in a future release. Please update
+  your scripts to use the new name.
+
+Disclaimer:
+  The  Tezos  network  is  a  new  blockchain technology.
+  Users are  solely responsible  for any risks associated
+  with usage of the Tezos network.  Users should do their
+  own  research to determine  if Tezos is the appropriate
+  platform for their needs and should apply judgement and
+  care in their network interactions.
+
+Raw packed data: 0x05070707070a000000047a06a7700a0000001601aaa102da175b6f714731460ca53a588aa2f7d6090007070098010505020000009b0320053d036d0743036e0a00000016017d2c6463a1ab7ab7700abd6acf0b5baf37369227000655036900000011257365745f76616c69645f736372697074072f02000000090743035b00ad09032702000000000743036a0000074303690a00000035697066733a2f2f516d664e5a7448745a5262544d593952476268545a416271544b77535165734e6d754867665874743551664c6a79034d031b
+Script-expression-ID-Hash: exprtkDUdKZ3C1fSX4a6uBbhBh9CBQiuq6rBrhV28sCdYBe653emJv
+Raw Script-expression-ID-Hash: 0x1e48d77700158b97991a6cb5a212e4c503ee0d635cfdc9dd549e300fc5a5580f
+Ledger Blake2b hash: 33DeqtugsEj6uK8Jd7BdkhedXUQMxBPYmSBkhXWxM1gA
+Raw Sha256 hash: 0x8c712beeeb6c9e1273434f69b07db990c8b4c5ba6604354ffd1f378c617b5689
+Raw Sha512 hash: 0xc116bcd6d973468ad0315bbae5ebfbcd0dc2fe262cc4ea67c73d27342d75acc6769546f0956ca641e64283128c8cf7be63c69e88ce528307f4e968070e39569c
+Gas remaining: 1039964.310 units remaining
