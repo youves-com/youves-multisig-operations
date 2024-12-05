@@ -6,16 +6,16 @@ If you are a Youves multisig member you can sign the provided operation using th
 
 ### Getting the payload
 
-Using native tezos-client (replace the endpoint ... with a node i.e. https://mainnet-tezos.giganode.io/):
+Using native octez-client (replace the endpoint ... with a node i.e. https://mainnet-tezos.giganode.io/):
 
 ```
-tezos-client --endpoint ... hash data "$(cat YYMMDD_operation.tz)" of type "$(cat ../misc/multisig_signed_type.tz)"
+octez-client --endpoint ... hash data "$(cat YYMMDD_operation.tz)" of type "$(cat ../misc/multisig_signed_type.tz)"
 ```
 
-Using docker tezos-client (replace the endpoint ... with a node i.e. https://mainnet-tezos.giganode.io/):
+Using docker octez-client (replace the endpoint ... with a node i.e. https://mainnet-tezos.giganode.io/):
 
 ```
-docker run -ti --rm tezos/tezos:arm64-9.4.0 tezos-client --endpoint ... hash data "$(cat YYMMDD_operation.tz)" of type "$(cat ../misc/multisig_signed_type.tz)"
+docker run -ti --rm tezos/tezos:arm64-9.4.0 octez-client --endpoint ... hash data "$(cat YYMMDD_operation.tz)" of type "$(cat ../misc/multisig_signed_type.tz)"
 ```
 
 This will produce an output like:
@@ -48,12 +48,12 @@ You can also use beacon and a compatible beacon wallet (i.e. AirGap) to sign the
 
 
 
-#### Using the tezos-client
+#### Using the octez-client
 
-You can use the tezos-client for signing those bytes using the following command (make sure to paste the entire payload where it says 0x0507... and you use the right account alias):
+You can use the octez-client for signing those bytes using the following command (make sure to paste the entire payload where it says 0x0507... and you use the right account alias):
 
 ```
-tezos-client sign bytes 0x0507... for my_multisig_account
+octez-client sign bytes 0x0507... for my_multisig_account
 ```
 
 This will produce an output like:
